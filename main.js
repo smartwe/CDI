@@ -8,17 +8,19 @@ const {autoUpdater} = require("electron-updater")
 
 function createWindow () {  
   let win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 900,
+    height: 700,
     webPreferences: {
       nodeIntegration: true
       
-    }
+    },
+    icon: path.join(__dirname, 'cdi.ico')
   })
   win.setMenu(null);
 
   
   win.loadURL('https://learning.chungdahm.com/')
+  
 }
 
 app.on('ready', createWindow);
