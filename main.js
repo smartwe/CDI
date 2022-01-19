@@ -1,6 +1,6 @@
 const {app, ipcMain, dialog, Notification, Tray, session, Menu, webContents} = require('electron')
 const path = require('path')
-const {BrowserWindow} = require('electron-acrylic-window')
+const {BrowserWindow} = require('electron')
 const {autoUpdater} = require("electron-updater")
 
 
@@ -11,10 +11,10 @@ function createWindow () {
     width: 900,
     height: 700,
     webPreferences: {
-      nodeIntegration: true
-      
+      nodeIntegration: true,
+      preload:`${__dirname}/src/a.js`
     },
-    icon: path.join(__dirname, 'cdi.ico')
+    icon: path.join(__dirname, './cdi.ico')
   })
   win.setMenu(null);
 

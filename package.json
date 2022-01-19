@@ -1,19 +1,22 @@
 {
   "name": "cdi",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --win  --publish never ",
-    "deploy": "electron-builder build --win --publish always"
+    "build": "electron-builder build --win --publish never",
+    "allbuild": "electron-builder build -mwl --publish never",
+    "alldeploy": "electron-builder build -mwl --publish onTag",
+    "deploy": "electron-builder build --win --publish onTag"
   },
   "author": "",
-  "license": "MIT",
+  "license": "MIT", 
   "devDependencies": {
     "electron": "^16.0.5",
-    "electron-acrylic-window": "^0.5.11",
-    "electron-builder": "^22.14.5",
+    "electron-builder": "^22.14.5"
+  },
+  "dependencies": {
     "electron-updater": "^4.6.1",
     "spectron": "^15.0.0"
   },
@@ -21,8 +24,44 @@
     "type": "git",
     "url": "https://github.com/smartwe/CDI"
   },
-  "dependencies": {
-    "path": "^0.12.7",
-    "updater": "^0.0.1"
+  "build": {
+    "productName": "CDI",
+    "appId": "com.smartwe.cdi",
+    "asar": false, 
+    "protocols" : {
+        "name" : "CDI",
+        "schemes" : ["CDI"]
+    },
+    "mac": { 
+      "target": [
+        "default"
+      ],
+      "icon": "./icon/cdi.icns"
+    },
+    "dmg": { 
+      "title": "CDI",
+      "icon": "./icon/cdi.icns"
+    },
+    "win": {  
+      "target": [  
+        "zip",  
+        "nsis"  
+      ],
+      "icon": "./icon/cdi.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage", 
+        "deb",
+        "rpm",
+        "zip",
+        "tar.gz"
+      ],
+      "icon": "./icon/cdi.icns"
+    },
+    "nsis":{
+      "oneClick" : false,
+      "allowToChangeInstallationDirectory" :true 
+    }
   }
 }
