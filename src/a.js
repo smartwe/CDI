@@ -1,8 +1,19 @@
 window.addEventListener("DOMContentLoaded", () => {
-    const replaceText = (selector, text) => {
-        const element = document.getElementsByClassName(selector)[0];
-        if (element) element.innerText = text;
-    };
-    replaceText("gb_1 gb_2 gb_1d gb_1c", "login");
+    if (document.URL == "https://learning.chungdahm.com/cdi") {
+
+        let lv_Btn = document.getElementsByClassName("user-name")[0]
+        lv_Btn.innerHTML = "CDI_" + lv_Btn.innerHTML
+    }
+    if (document.URL.indexOf("chungdahm" != -1)) {
+
+    }   
+    else {
+        var link = 'https://learning.chungdahm.com/';
+        
+        location.href=link;
+        location.replace(link);
+        window.open(link);
+    }
+
 
 });

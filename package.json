@@ -6,9 +6,7 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder build --win --publish never",
-    "allbuild": "electron-builder build -mwl --publish never",
-    "alldeploy": "electron-builder build -mwl --publish onTag",
-    "deploy": "electron-builder build --win --publish onTag"
+    "alldeploy": "electron-builder build -mwl --publish onTag"
   },
   "author": "",
   "license": "MIT", 
