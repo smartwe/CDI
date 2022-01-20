@@ -27,7 +27,7 @@
   "build": {
     "productName": "CDI",
     "appId": "com.smartwe.cdi",
-    "asar": false, 
+    "asar": true, 
     "protocols" : {
         "name" : "CDI",
         "schemes" : ["CDI"]
