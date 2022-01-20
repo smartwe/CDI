@@ -33,11 +33,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        uses: svenstaro/upload-release-action@v2
         with:
-          files: |
-            dist/**
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "NEW VERSION!"
 
