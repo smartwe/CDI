@@ -30,7 +30,7 @@ jobs:
         run: |
           npm install
           npm run build
-          npm run dist -- -lwm
+          npm run dist -lwm
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
