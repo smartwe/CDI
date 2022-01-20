@@ -6,10 +6,11 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder build --publish never",
+    "allbuild": "electron-builder build -mwl",
     "deploy": "electron-builder build --publish onTag",
     "alldeploy": "electron-builder build -mwl --publish onTag"
   },
-  "author": "",
+  "author": "smartwe",
   "license": "MIT", 
   "devDependencies": {
     "electron": "^16.0.5",
