@@ -29,7 +29,8 @@ jobs:
       - name: Build App
         run: |
           npm install
-          npm run dist -- -lwm --publish always
+          npm run dist -mwl --publish always 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
