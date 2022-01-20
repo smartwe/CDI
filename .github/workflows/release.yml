@@ -26,12 +26,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - name: Decrypt secret
-        run: ./.github/scripts/decrypt_secret.sh
-        env:
-          BUILD_KEY: ${{ secrets.BUILD_KEY }}
-          BUILD_IV: ${{ secrets.BUILD_IV }}
-          BUILD_PASS: ${{ secrets.BUILD_PASS }}
       - name: Build App
         run: |
           npm install
