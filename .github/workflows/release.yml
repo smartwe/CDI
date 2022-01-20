@@ -32,6 +32,4 @@ jobs:
           npm run dist -- -lwm --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          publish:
-            provider: github
-            token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
