@@ -43,8 +43,7 @@
       "icon": "./icon/cdi.icns"
     },
     "win": {  
-      "target": [  
-        "zip",  
+      "target": [   
         "nsis"  
       ],
       "icon": "./icon/cdi.icns"
