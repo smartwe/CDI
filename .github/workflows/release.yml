@@ -29,15 +29,9 @@ jobs:
       - name: Build App
         run: |
           npm install
-          npm run dist -- -lwm
+          npm run dist -- -lwm --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: dist/
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "NEW VERSION!"
-
+          publish:
+            provider: github
+            token: ${{ secrets.GITHUB_TOKEN }}
