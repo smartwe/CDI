@@ -13,12 +13,13 @@
     "test": "jest -u"
   },
   "author": "smartwe",
-  "license": "MIT", 
+  "license": "MIT",
   "devDependencies": {
     "electron": "^16.0.5",
     "electron-builder": "^22.14.5"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "electron-updater": "^4.6.1",
     "spectron": "^15.0.0"
   },
@@ -26,5 +27,4 @@
     "type": "git",
     "url": "https://github.com/smartwe/CDI"
   }
-  
 }
