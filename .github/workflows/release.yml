@@ -26,17 +26,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-      - name: Build App
+      - name: Build + Publish App
         run: |
           npm install
-          npm run dist --  -mwl --publish never
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish App
-        run: |
-          gh release create ./dist/ --generate-notes
-          
+          npm run dist --  -mwl --publish onTag
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
