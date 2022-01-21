@@ -29,7 +29,7 @@ jobs:
       - name: Build + Publish App
         run: |
           npm install
-          npm run build --publish onTagOrDraft
+          npm run build --publish-onTagOrDraft
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
