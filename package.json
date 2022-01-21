@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build": "electron-builder build",
     "start:build": "cross-env NODE_ENV=development webpack --watch --mode development",
     "start:app": "cross-env NODE_DEBUG=request NODE_ENV=development electron .",
     "start": "npm-run-all --parallel start:build start:app",
