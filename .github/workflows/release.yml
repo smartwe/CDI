@@ -31,7 +31,7 @@ jobs:
       - name: Build + Publish App
         run: |
           npm install
-          electron-builder -mwl --publish always
+          npm run mwl --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
