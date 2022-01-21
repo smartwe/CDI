@@ -26,8 +26,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-      - name: Install snapcraft
-        run: brew install snapcraft
       - name: Build + Publish App
         run: |
           npm install
