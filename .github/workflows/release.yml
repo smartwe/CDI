@@ -26,10 +26,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
+      - name: Install snapcraft
+        run: brew install snapcraft
       - name: Build + Publish App
         run: |
           npm install
-          npm run dist --  -lwm --publish always
+          electron-builder -mwl --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
