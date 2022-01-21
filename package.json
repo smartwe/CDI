@@ -9,7 +9,7 @@
     "start:app": "cross-env NODE_DEBUG=request NODE_ENV=development electron .",
     "start": "npm-run-all --parallel start:build start:app",
     "clean": "rm -rf dist",
-    "mwl": "electron-builder -mwl --publish always",
+    "mwl": "electron-builder -m -l -w -- --publish always",
     "test": "jest -u"
   },
   "author": "smartwe",
