@@ -29,7 +29,14 @@ jobs:
       - name: Build App
         run: |
           npm install
-          npm run dist --  -mwl --publish always 
+          npm run dist --  -mwl --publish never
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish App
+        run: |
+          gh release create ./dist/ --generate-notes
+          
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
