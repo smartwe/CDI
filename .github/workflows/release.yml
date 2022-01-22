@@ -8,11 +8,7 @@ on:
 jobs:
   build:
 
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [macOS-latest, windows-latest, ubuntu-latest]
+    runs-on: ${{ macOS-latest }}
 
     steps:
       - name: Context
@@ -26,6 +22,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
+      - name: Install snapcraft
+        run: brew install snapcraft
       - name: Build + Publish App
         run: |
           npm install
