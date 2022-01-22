@@ -10,7 +10,7 @@
     "start": "npm-run-all --parallel start:build start:app",
     "clean": "rm -rf dist",
     "mwl": "electron-builder -m -l -w --publish always",
-    "dist-all": "electron-builder build --x64 --linux --win --mac zip -p always",
+    "dist-all": "electron-builder build zip -p always",
     "test": "jest -u"
   },
   "author": "smartwe",
